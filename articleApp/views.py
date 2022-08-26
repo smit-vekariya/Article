@@ -91,10 +91,3 @@ def update_article(request,id):
     form=ArticleUpdateForm(instance=instance)
     form2 = ArticleUpdateForm(initial={'articletag':all_tag})
     return render(request,'updatearticle.html',{'form':form,'form2':form2})
-
-
-
-
-
-
-    # mytag=Article.objects.filter(draft=False,user=request.user).values_list("tag__tags",flat=True)

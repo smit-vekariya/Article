@@ -10,7 +10,7 @@
   <link rel="stylesheet" href="{% static 'css/styles.css' %}">
   <style>
     .center {
-      margin: auto;
+      margin: 25px auto;
       width: 60%;
       padding: 10px;
       box-shadow: 1px 0px 5px 0px;
@@ -19,34 +19,37 @@
     </style>
     <style>
       .centerform {
-        margin: auto;
+        margin: 25px auto;
         width: 30%;
         padding: 20px;
+        box-shadow: 1px 0px 9px 1px;
+      }
+      .navbar3d{
         box-shadow: 1px 0px 9px 1px;
       }
       </style>
 </head>
 <body>
-  <nav class="navbar sticky-top navbar-dark bg-primary">
+  <nav class="navbar sticky-top alert-primary navbar3d">
     <div class="container-fluid" >
       <a class="navbar-brand" href="#">Intellial Solution</a>
       <div class="d-grid gap-2 col-6 mx-auto">
-        <a type="button" href="{% url 'articleApp:articleList' %}" class="btn btn-info">Article</a>
+        <a type="button" href="{% url 'articleApp:articleList' %}" class="btn btn-outline-dark">Article</a>
       </div>
     
       {% if user.is_authenticated %}
       <div>
-        <a type="button" href="{% url 'articleApp:myarticle' %}" class="btn btn-success">My Artical</a>
-        <a type="button" href="{% url 'articleApp:draft' %}" class="btn btn-success">Draft</a>
-        <a type="button" href="{% url 'articleApp:article' %}" class="btn btn-success">Add Article</a>
-        <a type="button" href="{% url 'articleApp:logout' %}" class="btn btn-danger">Logout</a>
-        <a class="btn btn-outline-dark">{{request.user}}</a>
+        <a type="button" href="{% url 'articleApp:myarticle' %}" class="btn btn-outline-dark">My Artical</a>
+        <a type="button" href="{% url 'articleApp:draft' %}" class="btn btn-outline-dark">Draft</a>
+        <a type="button" href="{% url 'articleApp:article' %}" class="btn btn-outline-dark">Add Article</a>
+        <a type="button" href="{% url 'articleApp:logout' %}" class="btn btn-outline-danger">Logout</a>
+        <a class="btn btn-success">&#x1F464; {{request.user}}</a>
       </div>
       {% else %}
       <div>
       
-        <a type="button" href="{% url 'articleApp:login' %}" class="btn btn-success">Login</a>
-        <a type="button" href="{% url 'articleApp:signup' %}" class="btn btn-success">Signup</a>
+        <a type="button" href="{% url 'articleApp:login' %}" class="btn btn-outline-dark">Login</a>
+        <a type="button" href="{% url 'articleApp:signup' %}" class="btn btn-outline-dark">Signup</a>
      </div>
       {% endif %}
       </div>

@@ -27,9 +27,7 @@
     <div class="col-md-3">
         <h2 class="text-success">Popular Tags:</h2>
         {% for tag in tags %}
-          {% for tag in tag.values %}
-            <div class=" btn btn-secondary btn-sm">{{tag}}</div>
-          {% endfor %}
+        <div class=" btn btn-secondary btn-sm">{{tag.tag__tags}}</div>
         {% endfor %} 
      </div>
      
