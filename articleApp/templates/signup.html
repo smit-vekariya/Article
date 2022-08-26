@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+{% block content %}
+  <div class="container-fluid">
+
+  <form method="POST">
+    {% csrf_token %}
+    <div class="mb-3">
+      <h2>Intellial Solution</h2>
+      <label  class="form-label">Registration Form</label>
+      {{form.as_p}}
+    </div>
+    <button type="submit" class="btn btn-primary">Submit</button>
+  </form>
+  </div>
+{% endblock content %}

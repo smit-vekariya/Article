@@ -1,0 +1,34 @@
+{% extends 'base.html' %}
+{% load crispy_forms_tags %}
+{% load static %}
+{% block content %}
+  <div>
+    {% for Article in myarticle %}
+    <div class="center">
+      <h2 class="text-primary">{{Article.title}}</h2>
+      <p class="text-secondary">&#128197;{{Article.created_at}} &#x1F464;{{Article.user}}</p>
+
+      {% if Article.image %}
+        <img src="{{ Article.image.url}}" width="600" height="400" alt="{{Article.image}}">
+      {% endif %}   
+
+      <p>{{Article.content}}</p>
+  
+
+      {% for tag in mytag %}
+            {% if tag.id == Article.id %} 
+                   <div class="btn btn-secondary btn-sm">{{tag.tag__tags}} </div>  
+             {% endif%}
+      {% endfor %}
+    
+      <br><br>
+
+      <a type="button" href="{% url 'articleApp:delete' Article.id %}" class="btn btn-danger btn-sm">Delete</a>
+      <a type="button" href="{% url 'articleApp:update' Article.id %}" class="btn btn-warning btn-sm">Update</a>
+
+    
+    </div><br>
+    {% endfor %} 
+    
+  </div>
+{% endblock content %}

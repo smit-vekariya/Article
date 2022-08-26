@@ -1,0 +1,36 @@
+{% extends 'base.html' %}
+{% load crispy_forms_tags %}
+{% block content %}
+  <div class="centerform">
+  <form method="post" enctype="multipart/form-data">
+    {% csrf_token %}
+    <div class="mb-3">
+      <div class="mb-3">
+        <label  class="form-label">Title</label>
+        <p>{{form.title}}</p>
+      </div>
+      <div class="mb-3">
+        <label  class="form-label">Content</label>
+        <p>{{form.content}}</p>
+      </div>
+      <div class="mb-3">
+        <label  class="form-label">Image</label>
+       <p> {{form.image}}</p>
+      </div>
+      <div class="mb-3">
+        <label class="form-label">Tags</label>
+        <p>{{form2.articletag}}</p>
+      </div>
+      <div class="mb-3">
+        <label class="form-label">Draft</label>
+        <p>{{form.draft}}</p>
+      </div>
+      <button type="submit" class="btn btn-success">Save</button>
+      <a type="button" href="{% url 'articleApp:myarticle' %}" class="btn btn-danger">Cancel</a>
+
+    </div>
+  </form>
+  
+  </div>
+
+  {% endblock content %}
