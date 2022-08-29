@@ -13,7 +13,7 @@ class Article(models.Model):
     content=models.TextField(max_length=250)
     created_at = models.DateTimeField(null=True,auto_now_add=True)
     tag=models.ManyToManyField(Tag,related_name='tag')
-    draft= models.BooleanField(null=True)
+    draft= models.BooleanField(default=False)
    
 
     def __str__(self):

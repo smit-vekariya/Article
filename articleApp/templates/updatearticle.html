@@ -1,5 +1,5 @@
 {% extends 'base.html' %}
-{% load crispy_forms_tags %}
+
 {% block content %}
   <div class="centerform">
   <form method="post" enctype="multipart/form-data">
@@ -22,8 +22,7 @@
         <p>{{form2.articletag}}</p>
       </div>
       <div class="mb-3">
-        <label class="form-label">Draft</label>
-        <p>{{form.draft}}</p>
+        <p>{{form.draft}} Save As Draft</p>
       </div>
       <button type="submit" class="btn btn-success">Save</button>
       <a type="button" href="{% url 'articleApp:myarticle' %}" class="btn btn-danger">Cancel</a>
